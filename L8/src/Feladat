@@ -1,0 +1,54 @@
+
+
+A diagram központi eleme a Plant interfész,
+melynek metódusai a következők:
+
+getOxigenAmountPerYear - az adott növény éves oxigén termelése;
+getLifeTime - az adott növény élettartama;
+getRepresentation - az adott növény szöveges reprezentációja.
+
+A simple csomagban lévő osztályok
+implementálják a Plant interfészt. Oxigén termelésük
+és élettartamuk egy-egy általatok
+választott szám, szöveges
+reprezentációjuk pedig az osztály nevének kezdőbetűje.
+
+A composite csomagban lévő osztályok szintén
+implementálják a Plant interfészt, emellett tárolnak
+Plant típusú elemeket (a Forest osztály egy
+ArrayList-ben, a Field osztály pedig egy HashSet-ben).
+Mindkét osztály esetén az oxigén termelés egyenlő a
+benne lévő növények oxigén termelésének összegével,
+az élettartam pedig egyenlő a benne lévő növények
+élettartamának maximumával.
+
+Az erdő szöveges reprezentációja nem más, mint a
+kapcsos zárójelek között a tárolt növények szöveges
+reprezentációja vesszővel elválasztva. Mező esetén a
+reprezentáció ugyanez, csak kapcsos helyett szögletes
+zárójel jelenik meg.
+
+Mindkét osztály rendelkezik add, illetve remove metódussal,
+ami egy növény hozzáadását, illetve eltávolítását
+teszi lehetővé. Ezek meghívják az ArrayList,
+illetve a HashSet megfelelő metódusait.
+
+Tesztelés
+Az alkalmazás teszteléséhez hozd létre és add
+egymáshoz az alábbi
+reprezentáció eléréséhez szükséges elemeket:
+{[G, F], [M, M], P, O}.
+Írasd ki az erdő reprezentációját, oxigén termelését
+és élettartamát.
+Írasd ki a mezők oxigén termelését és élettartamát is.
+
+Tippek
+
+Az erdő és mező esetén a gyűjtemények bejárására
+lehet használni a java.util.Iterator-t.
+Az előbbi bejárás megoldható a java 8
+stream-ek segítségével
+(ezáltal az interfész mindhárom metódusának implementálása
+egy-egy sor kódot igényel). Lásd: StreamExample.javaView in a new window
+A simple csomagbeli osztályok implementálásakor javasolt könnyen
+ellenőrizhető értékeket adni oxigén termelésnek és élettartamnak.
